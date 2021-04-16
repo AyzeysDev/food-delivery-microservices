@@ -15,6 +15,7 @@
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-bootstrap": "1.5.2",
     "react-stripe-checkout": "^2.6.3",
     "react-helmet": "^6.1.0"
   }

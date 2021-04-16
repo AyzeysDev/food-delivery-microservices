@@ -1,15 +1,23 @@
+import { Row, Col, ListGroup, Card } from 'react-bootstrap';
 
 const OrderIndex = ({ orders }) => {
   return (
-    <ul>
+    <Row>
       {orders.map((order) => {
         return (
-          <li key={order.id}>
-            {order.food.name} - {order.status}
-          </li>
+          <Col key={order.id} sm={10} md={5} lg={4} xl={4}>
+          <Card className='my-3 p-3 rounded' bg={'Primary'} text={'dark'} border="dark" style={{ width: '20rem' }}>
+          <Card.Body>
+          <ListGroup variant="flush">
+            <ListGroup.Item>{order.food.name} - {order.status}</ListGroup.Item>
+            <ListGroup.Item>Description: {description}</ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+        </Card>
+          </Col>
         );
       })}
-    </ul>
+    </Row>
   );
 };
 
