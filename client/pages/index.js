@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+
 const LandingPage = ({ currentUser, foods }) => {
   const foodList = foods.map((food) => {
     return (

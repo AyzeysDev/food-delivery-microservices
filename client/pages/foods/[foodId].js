@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import useRequest from '../../hooks/use-request';
 
-const FoodShow = ({ food }) => {
+const FoodShow = ({ food, currentUser }) => {
   const { doRequest, errors } = useRequest({
     url: '/api/orders',
     method: 'post',
@@ -17,12 +17,13 @@ const FoodShow = ({ food }) => {
       <h1>{food.name}</h1>
       <h4>Price: {food.price}</h4>
       {errors}
-      <button onClick={() => doRequest()} className="btn btn-primary">
+      <button onClick={() => doRequest()} disabled= {food.userId === currentUser.id} className="btn btn-primary">
         Purchase
       </button>
     </div>
   );
 };
+
 
 FoodShow.getInitialProps = async (context, client) => {
   const { foodId } = context.query;
